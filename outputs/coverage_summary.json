@@ -1,0 +1,11 @@
+{
+  "title": "Marketplace Discovery & Order Engine",
+  "scenario_count": 27,
+  "category_counts": {
+    "boundary": 5,
+    "invalid_type": 2,
+    "invalid_type_or_constraint": 7,
+    "positive": 6,
+    "required_field": 7
+  }
+}

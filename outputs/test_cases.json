@@ -1,0 +1,537 @@
+[
+  {
+    "id": "TC-748D4D",
+    "operation_id": "health_health_get",
+    "method": "GET",
+    "path_template": "/health",
+    "path": "/health",
+    "name": "valid representative request",
+    "category": "positive",
+    "expected": "2xx",
+    "rationale": "Send a minimally valid request derived from the operation schema.",
+    "query": {},
+    "headers": {},
+    "body": null
+  },
+  {
+    "id": "TC-7A6D9B",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "valid representative request",
+    "category": "positive",
+    "expected": "2xx",
+    "rationale": "Send a minimally valid request derived from the operation schema.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-E721C6",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "omit required body field 'title'",
+    "category": "required_field",
+    "expected": "4xx",
+    "rationale": "Required body fields should not be silently accepted when absent.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-24B25C",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "omit required body field 'category'",
+    "category": "required_field",
+    "expected": "4xx",
+    "rationale": "Required body fields should not be silently accepted when absent.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-83009C",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "omit required body field 'seller'",
+    "category": "required_field",
+    "expected": "4xx",
+    "rationale": "Required body fields should not be silently accepted when absent.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-911E10",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "omit required body field 'price'",
+    "category": "required_field",
+    "expected": "4xx",
+    "rationale": "Required body fields should not be silently accepted when absent.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-7E1C76",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "omit required body field 'quantity'",
+    "category": "required_field",
+    "expected": "4xx",
+    "rationale": "Required body fields should not be silently accepted when absent.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0
+    }
+  },
+  {
+    "id": "TC-7F5636",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "invalid value for body field 'title'",
+    "category": "invalid_type_or_constraint",
+    "expected": "4xx",
+    "rationale": "Body value deliberately violates the declared schema or constraint.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-E44891",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "overlength body field 'title'",
+    "category": "boundary",
+    "expected": "4xx",
+    "rationale": "String exceeds its declared maximum length.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-437528",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "invalid value for body field 'description'",
+    "category": "invalid_type_or_constraint",
+    "expected": "4xx",
+    "rationale": "Body value deliberately violates the declared schema or constraint.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": 12345,
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-37FF31",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "overlength body field 'description'",
+    "category": "boundary",
+    "expected": "4xx",
+    "rationale": "String exceeds its declared maximum length.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-D95B9A",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "invalid value for body field 'category'",
+    "category": "invalid_type_or_constraint",
+    "expected": "4xx",
+    "rationale": "Body value deliberately violates the declared schema or constraint.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-FA08E2",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "overlength body field 'category'",
+    "category": "boundary",
+    "expected": "4xx",
+    "rationale": "String exceeds its declared maximum length.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-634A0B",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "invalid value for body field 'seller'",
+    "category": "invalid_type_or_constraint",
+    "expected": "4xx",
+    "rationale": "Body value deliberately violates the declared schema or constraint.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-9F3942",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "overlength body field 'seller'",
+    "category": "boundary",
+    "expected": "4xx",
+    "rationale": "String exceeds its declared maximum length.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-37139A",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "invalid value for body field 'item_condition'",
+    "category": "invalid_type_or_constraint",
+    "expected": "4xx",
+    "rationale": "Body value deliberately violates the declared schema or constraint.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "__not_in_enum__",
+      "price": 1.0,
+      "quantity": 1
+    }
+  },
+  {
+    "id": "TC-81B12B",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "invalid value for body field 'quantity'",
+    "category": "invalid_type_or_constraint",
+    "expected": "4xx",
+    "rationale": "Body value deliberately violates the declared schema or constraint.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": "not-an-integer"
+    }
+  },
+  {
+    "id": "TC-7E83EA",
+    "operation_id": "create_listing_listings_post",
+    "method": "POST",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "below-minimum body field 'quantity'",
+    "category": "boundary",
+    "expected": "4xx",
+    "rationale": "Numeric value is below the declared minimum.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "title": "xxxxxxxxxxxx",
+      "description": "",
+      "category": "xxxxxxxxxxxxxxx",
+      "seller": "xxxxxxxxxxxxx",
+      "item_condition": "used",
+      "price": 1.0,
+      "quantity": 0.0
+    }
+  },
+  {
+    "id": "TC-0F9969",
+    "operation_id": "search_listings_listings_get",
+    "method": "GET",
+    "path_template": "/listings",
+    "path": "/listings",
+    "name": "valid representative request",
+    "category": "positive",
+    "expected": "2xx",
+    "rationale": "Send a minimally valid request derived from the operation schema.",
+    "query": {
+      "sort": "relevance",
+      "offset": "0",
+      "limit": "20"
+    },
+    "headers": {},
+    "body": null
+  },
+  {
+    "id": "TC-00C182",
+    "operation_id": "get_listing_listings__listing_id__get",
+    "method": "GET",
+    "path_template": "/listings/{listing_id}",
+    "path": "/listings/1",
+    "name": "valid representative request",
+    "category": "positive",
+    "expected": "2xx",
+    "rationale": "Send a minimally valid request derived from the operation schema.",
+    "query": {},
+    "headers": {},
+    "body": null
+  },
+  {
+    "id": "TC-2C7F7F",
+    "operation_id": "get_listing_listings__listing_id__get",
+    "method": "GET",
+    "path_template": "/listings/{listing_id}",
+    "path": "/listings/not-an-integer",
+    "name": "invalid path parameter 'listing_id'",
+    "category": "invalid_type",
+    "expected": "4xx",
+    "rationale": "Path parameter violates its declared schema.",
+    "query": {},
+    "headers": {},
+    "body": null
+  },
+  {
+    "id": "TC-A7FD66",
+    "operation_id": "create_order_orders_post",
+    "method": "POST",
+    "path_template": "/orders",
+    "path": "/orders",
+    "name": "valid representative request",
+    "category": "positive",
+    "expected": "2xx",
+    "rationale": "Send a minimally valid request derived from the operation schema.",
+    "query": {},
+    "headers": {
+      "Idempotency-Key": "xxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "body": {
+      "items": [
+        {
+          "listing_id": 1,
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-451714",
+    "operation_id": "create_order_orders_post",
+    "method": "POST",
+    "path_template": "/orders",
+    "path": "/orders",
+    "name": "omit required header 'Idempotency-Key'",
+    "category": "required_field",
+    "expected": "4xx",
+    "rationale": "Required request headers should be validated by the API.",
+    "query": {},
+    "headers": {},
+    "body": {
+      "items": [
+        {
+          "listing_id": 1,
+          "quantity": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-C7ED07",
+    "operation_id": "create_order_orders_post",
+    "method": "POST",
+    "path_template": "/orders",
+    "path": "/orders",
+    "name": "omit required body field 'items'",
+    "category": "required_field",
+    "expected": "4xx",
+    "rationale": "Required body fields should not be silently accepted when absent.",
+    "query": {},
+    "headers": {
+      "Idempotency-Key": "xxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "body": {}
+  },
+  {
+    "id": "TC-E9EB1E",
+    "operation_id": "create_order_orders_post",
+    "method": "POST",
+    "path_template": "/orders",
+    "path": "/orders",
+    "name": "invalid value for body field 'items'",
+    "category": "invalid_type_or_constraint",
+    "expected": "4xx",
+    "rationale": "Body value deliberately violates the declared schema or constraint.",
+    "query": {},
+    "headers": {
+      "Idempotency-Key": "xxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "body": {
+      "items": "not-an-array"
+    }
+  },
+  {
+    "id": "TC-439607",
+    "operation_id": "get_order_orders__order_id__get",
+    "method": "GET",
+    "path_template": "/orders/{order_id}",
+    "path": "/orders/1",
+    "name": "valid representative request",
+    "category": "positive",
+    "expected": "2xx",
+    "rationale": "Send a minimally valid request derived from the operation schema.",
+    "query": {},
+    "headers": {},
+    "body": null
+  },
+  {
+    "id": "TC-27532F",
+    "operation_id": "get_order_orders__order_id__get",
+    "method": "GET",
+    "path_template": "/orders/{order_id}",
+    "path": "/orders/not-an-integer",
+    "name": "invalid path parameter 'order_id'",
+    "category": "invalid_type",
+    "expected": "4xx",
+    "rationale": "Path parameter violates its declared schema.",
+    "query": {},
+    "headers": {},
+    "body": null
+  }
+]
