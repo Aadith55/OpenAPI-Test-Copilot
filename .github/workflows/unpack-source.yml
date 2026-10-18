@@ -36,7 +36,7 @@ jobs:
               "part04.txt": 5000,
               "part05.txt": 4176,
           }
-          actual = {p.name: p.stat().st_size for p in source_dir.glob("*.txt")}
+          actual = {p.name: len(p.read_text(encoding="ascii").strip()) for p in source_dir.glob("*.txt")}
           if actual != expected:
               raise SystemExit(f"Unexpected source chunk set/sizes: {actual}")
 
