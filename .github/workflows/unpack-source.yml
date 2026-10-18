@@ -53,9 +53,9 @@ jobs:
               if not members:
                   raise SystemExit("Archive has no members")
               for member in members:
-                  if not member.name.startswith(prefix):
+                  if member.name != "openapi_test_copilot" and not member.name.startswith(prefix):
                       raise SystemExit(f"Unexpected archive member: {member.name}")
-                  relative = PurePosixPath(member.name[len(prefix):])
+                  relative = PurePosixPath("" if member.name == "openapi_test_copilot" else member.name[len(prefix):])
                   if relative.is_absolute() or ".." in relative.parts:
                       raise SystemExit(f"Unsafe archive path: {member.name}")
                   if member.issym() or member.islnk() or not (member.isdir() or member.isfile()):
